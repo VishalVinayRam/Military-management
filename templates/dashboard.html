@@ -94,7 +94,12 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        Alina Mclourd
+                                        {% if user.is_authteticated%}
+                                        {{user.username}}
+                                        {% else %}
+                                        <a href ="/login/"> Login</a>
+                                        {% endif %}
+                                        
                                     </div>
                                     <div class="widget-subheading">
                                         VP People Manager
@@ -110,6 +115,15 @@
                     </div>        </div>
             </div>
         </div>        <div class="ui-theme-settings">
+            {% if messages %}
+            {
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{message}}
+                </div>
+                {% endfor %}
+            }
+            {% endif %}
             <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
                 <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
             </button>
@@ -719,7 +733,7 @@
                                     </div>
                                 </div>    </div>
                         </div>            <div class="row">
-                            <div class="col-md-6 col-xl-4">
+                            {% comment %} <div class="col-md-6 col-xl-4">
                                 <div class="card mb-3 widget-content bg-midnight-bloom">
                                     <div class="widget-content-wrapper text-white">
                                         <div class="widget-content-left">
@@ -916,8 +930,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12 col-lg-6">
+                            </div> {% endcomment %}
+                            {% comment %} <div class="col-md-12 col-lg-6">
                                 <div class="mb-3 card">
                                     <div class="card-header-tab card-header">
                                         <div class="card-header-title">
@@ -1100,11 +1114,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
+                        
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header">Active Users
+                                    {% if user.is_authteticated%}
+                        {% for i in users %}    
+                                    <div class="card-header">{{user.username}}
+                                        {% endfor %}
+                                        {% else%}
+                                        <div class="card-header">Users
+
+                                        {% endif %}
+
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
                                                 <button class="active btn btn-focus">Last Week</button>

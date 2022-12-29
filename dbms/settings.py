@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap_4'
@@ -78,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'sol'
+LOGIN_REDIRECT_URL = 'main'
 WSGI_APPLICATION = 'dbms.wsgi.application'
 
 

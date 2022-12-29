@@ -7,7 +7,7 @@ Function views
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
 Class-based views
-    1. Add an import:  from other_app.views import Home
+    1. Add an import:  from other_app import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
@@ -15,18 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView,LogoutView
 from soliders.views import *
-from django.views.generic.base import TemplateView # new
+from terror.views import *
+from django.conf.urls import include
+from django.conf import settings
+from family import urls as familyurls
+from regiment import urls as regimenturls
+from ammon import urls as ammourls
+from terror import urls as terrorurls
+
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sol/',solider_register),
-    path('sol/register',register_usere),
-    path("login/",login),
-    path('logins/', TemplateView.as_view(template_name='forms/login.html'), name='home'), # new
-    path('',index),
+   path('sol/',include(familyurls)),
+    path('reg/',include(regimenturls)),
+    path('ammo/',include(ammourls)),
+    path('ter/',include(terrorurls)),
+    path('login/',login,name="login"),
+    path('',index,name="main_screen"),
+    path('mains/',dashboard,name="dash_board")
+    # path('logout/',LogoutView.as_view(templatename ='logout.html')),
 
 
 ]
