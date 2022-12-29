@@ -78,6 +78,7 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_REDIRECT_URL = 'sol'
 WSGI_APPLICATION = 'dbms.wsgi.application'
 
 
