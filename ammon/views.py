@@ -1,10 +1,13 @@
 from django.shortcuts import render,redirect
+
+from soliders.decorators import allowed_users
 from .models import Ammo
 from .forms import RegimentForm
 
 
 
 # Create your views here.
+@allowed_users(allowed_roles=['Head-quarters','Recuritment'])
 def regiement_logins(request):
     if request.method == "POST":
         form = RegimentForm(request.POST)
