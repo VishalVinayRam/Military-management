@@ -100,7 +100,11 @@
                                         
                                     </div>
                                     <div class="widget-subheading">
-                                        VP People Manager
+                                        {% if user.is_authteticated %}
+                                        <h1>{{user.name}}</h1>
+                                        {% else %}
+                                        <h1>Guest</h1>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">

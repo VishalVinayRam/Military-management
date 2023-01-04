@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from soliders.decorators import allowed_users
 
 from terror.models import Terrorist 
 from .forms import TerrorstForm
@@ -7,7 +8,9 @@ from .forms import TerrorstForm
 
 
 # Create your views here.
+@allowed_users(allowed_roles=['Head-quarters'])
 def terror_login(request):
+    print(allowed_users)
     if request.method == "POST":
         form = TerrorstForm(request.POST)
         datas = request.POST

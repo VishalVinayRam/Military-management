@@ -3,7 +3,8 @@ from .models import Family
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
-from soliders.models import Soliders
+from soliders.models import *  
+from soliders.decorators import *
 # Create your views here.
 from .forms import RegimentForm
 
@@ -14,9 +15,10 @@ def Profile(request):
     solider = Soliders.objects.get(solider_id=solider_id)
     return render(request,'Manager_Profile.html',{'solider':solider,})
     
+@allowed_users(allowed_roles=['Head-quarters','Recuritment','Solider'])
 def regiement_logins(request):
     if request.method == "POST":
-        form =  RegimentForm(request.POST)
+        form =  Family(request.POST)
         datas = request.POST
         # username = datas.get('name')
         # print(words)
@@ -27,7 +29,7 @@ def regiement_logins(request):
             form.save()
             return redirect('/mains/')
     else:        
-        form =  RegimentForm()
+        form =  Family()
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
 

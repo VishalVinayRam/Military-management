@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 
+{% load crispy_forms_tags %}
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -57,7 +58,8 @@
                 {% block content %}
         <form method="post">
           {% csrf_token %}
-          {{ form.as_p }}
+          {{form|crispy}}
+
           <button type="submit">Log In</button>
         </form>
         </center>

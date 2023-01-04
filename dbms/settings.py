@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'regiment',
     'soliders',
     'widget_tweaks',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap_4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 
 MIDDLEWARE = [
@@ -78,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'main'
+LOGIN_REDIRECT_URL = '/mains/'
 WSGI_APPLICATION = 'dbms.wsgi.application'
 
 

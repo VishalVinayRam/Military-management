@@ -37,11 +37,16 @@ urlpatterns = [
     path('ammo/',include(ammourls)),
         path('mission/',include(missionurls)),
     path('ter/',include(terrorurls)),
-    path('login/',login,name="login"),
+    # path('login/',login,name="login"),
     path('',index,name="main_screen"),
-    path('mains/',dashboard,name="dash_board")
-    # path
-    # path('logout/',LogoutView.as_view(templatename ='logout.html')),
+    path('mains/',dashboard,name="dash_board"),
+    path('register/',register_usere,name="register"),
+    # patht
+    # path('logout/',logouts,name="logout"),
+    path('login/',LoginView.as_view(template_name='forms/login.html'),name='login'),
+    path('logout/', LogoutView.as_view(template_name ="forms/logout.html"), name='logout'),
+
+    
 
 
 ]
