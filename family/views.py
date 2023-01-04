@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from soliders.models import Soliders
 # Create your views here.
+from .forms import RegimentForm
 
 def Profile(request):
     if('sol_id' not in request.session):
@@ -15,7 +16,7 @@ def Profile(request):
     
 def regiement_logins(request):
     if request.method == "POST":
-        form = Family(request.POST)
+        form =  RegimentForm(request.POST)
         datas = request.POST
         # username = datas.get('name')
         # print(words)
@@ -26,6 +27,7 @@ def regiement_logins(request):
             form.save()
             return redirect('/mains/')
     else:        
-        form = Family()
+        form =  RegimentForm()
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
+
