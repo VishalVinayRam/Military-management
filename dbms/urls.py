@@ -25,6 +25,7 @@ from regiment import urls as regimenturls
 from ammon import urls as ammourls
 from terror import urls as terrorurls
 from missions import urls  as missionurls
+from soliders.views import dashboard
 
 
 
@@ -39,6 +40,7 @@ urlpatterns = [
     path('login/',login,name="login"),
     path('',index,name="main_screen"),
     path('mains/',dashboard,name="dash_board")
+    # path
     # path('logout/',LogoutView.as_view(templatename ='logout.html')),
 
 

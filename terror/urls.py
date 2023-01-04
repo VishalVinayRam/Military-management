@@ -3,5 +3,7 @@ from .views import *
 from django.conf.urls import include
 
 urlpatterns = [
-    path('login/',terror_login,name="ter-login")
+    path('login/',terror_login,name="ter-login"),
+            path('data/',dashboard,name="dashboard")
+
 ]

@@ -25,4 +25,9 @@ def terror_login(request):
     return render(request,'forms/terror-register.html',{'form':form})
 
 
-
+def dashboard(request):
+    user= Terrorist.objects.all()
+        # return render(request,'dashboard.html')     
+    print(user)
+        
+    return render(request,'dashboards/terror_data.html',{'user':user})

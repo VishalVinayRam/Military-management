@@ -27,4 +27,4 @@ def dashboard(request):
         # return render(request,'dashboard.html')     
     print(user)
         
-    return render(request,'dashboard.html',{'user':user})
+    return render(request,'dashboards/ammo-data.html',{'user':user})

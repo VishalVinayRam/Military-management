@@ -31,3 +31,9 @@ def regiement_logins(request):
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
 
+def dashboard(request):
+    user= Family.objects.all()
+        # return render(request,'dashboard.html')     
+    print(user)
+        
+    return render(request,'dashboards/family-data.html',{'user':user})

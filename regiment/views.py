@@ -26,4 +26,4 @@ def dashboard(request):
         # return render(request,'dashboard.html')     
     print(user)
         
-    return render(request,'dashboards/mission.html',{'user':user})
+    return render(request,'dashboards/regiment.html',{'user':user})
