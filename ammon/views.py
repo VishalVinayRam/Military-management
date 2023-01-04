@@ -1,12 +1,13 @@
 from django.shortcuts import render,redirect
 from .models import Ammo
+from .forms import RegimentForm
 
 
 
 # Create your views here.
 def regiement_logins(request):
     if request.method == "POST":
-        form = Ammo(request.POST)
+        form = RegimentForm(request.POST)
         datas = request.POST
         # username = datas.get('name')
         # print(words)
@@ -17,6 +18,13 @@ def regiement_logins(request):
             form.save()
             return redirect('/mains/')
     else:        
-        form = Ammo()
+        form = RegimentForm()
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
+
+def dashboard(request):
+    user= Ammo.objects.all()
+        # return render(request,'dashboard.html')     
+    print(user)
+        
+    return render(request,'dashboard.html',{'user':user})

@@ -24,6 +24,7 @@ from family import urls as familyurls
 from regiment import urls as regimenturls
 from ammon import urls as ammourls
 from terror import urls as terrorurls
+from missions import urls  as missionurls
 
 
 
@@ -33,6 +34,7 @@ urlpatterns = [
    path('sol/',include(familyurls)),
     path('reg/',include(regimenturls)),
     path('ammo/',include(ammourls)),
+        path('mission/',include(missionurls)),
     path('ter/',include(terrorurls)),
     path('login/',login,name="login"),
     path('',index,name="main_screen"),

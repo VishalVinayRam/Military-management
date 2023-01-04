@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <meta charset="UTF-8">
+<meta name="language" content="ES">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--PLUGIN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body class="animate-bottom">
+
+<!--NAV-->
+<nav class="left_nav" id="left_nav">
+    <a href="#" class="active">
+        <i class="fa fa-home"></i>
+        <b>Home</b>
+    </a>
+    <a href="#">
+        <i class="fa fa-calendar"></i>
+        <b>Event</b>
+    </a>
+    <a href="#">
+        <i class="fa fa-users"></i>
+        <b>Tests</b>
+    </a>
+    <a href="#">
+        <i class="fa fa-line-chart"></i>
+        <b>Default</b>
+    </a>
+    <a href="#" class="res">
+        <i class="fa fa-comments-o"></i>
+        <b>Message</b>
+    </a>
+    <a href="#" class="res">
+        <i class="fa fa-gear"></i>
+        <b>Setting</b>
+    </a>
+</nav>
+
+<main>
+<!--HEADER-->
+<header class="flex">
+    <section class="flex-content">
+        <a href="javascript:{}" class="small" id="nav_icon"><i class="fa fa-bars"></i></a>
+        <a href="#" class="small">Admin Dashboard</a>
+    </section>
+    <section class="flex-content flex">
+        <a href="#" class="res"><img src="https://i.postimg.cc/xjZf6n9Q/author.png" alt="" class="author"></a>
+        <form>
+            <label class="flex">
+                <input type="text" name="preview" placeholder="Preview on:">
+                <a href="#" class="flex"><i class="fa fa-mobile"></i></a>
+                <a href="#" class="flex"><i class="fa fa-android"></i></a>
+            </label>
+        </form>
+    </section>
+</header>
+
+<!--NAV-->
+<nav class="right_nav">
+    <a href="#">
+        <img src="https://i.postimg.cc/xjZf6n9Q/author.png" alt="" class="author">
+    </a>
+    <a href="#">
+        <i class="fa fa-bell"></i>
+    </a>
+    <a href="#">
+        <i class="fa fa-comments-o"></i>
+    </a>
+    <a href="#">
+        <i class="fa fa-gear"></i>
+    </a>
+</nav>
+
+
+<!--SECTION1-->
+<div class="sections section1 flex">
+    <section class="flex-content">
+        <div class="tab_buttons">
+            <button class="default">Event Settings</button>
+            <button class="tab_button" onclick="openTab(event,'General')">General</button>
+            <button class="tab_button" onclick="openTab(event,'Privacy')">Privacy</button>
+            <button class="tab_button primary" onclick="openTab(event,'Features')">Features</button>
+            <button class="tab_button" onclick="openTab(event,'Customization')">Customization</button>
+            <button class="tab_button" onclick="openTab(event,'Integration')">Integration</button>
+            <button class="tab_button" onclick="openTab(event,'Session')">Session Settings</button>
+            <button class="tab_button" onclick="openTab(event,'Plans')">My plans</button>
+        </div>
+    </section>
+    <section class="flex-content padding_2x">
+        <div id="General" class="tabs" style="display:none">
+            <table>
+                <tr>
+                    <th>
+                        <h3><i class="fa fa-comments"></i> General</h3>
+                    </th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="Privacy" class="tabs" style="display:none">
+            <table>
+                <tr>
+                    <th>
+                        <h3><i class="fa fa-comments"></i> Privacy</h3>
+                    </th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="Features" class="tabs">
+            <table>
+                <tr>
+                    <th>
+                        <h3><i class="fa fa-comments"></i> Audience Q&A</h3>
+                    </th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Moderation</h4>
+                        <p>Easily review all questions before they go live</p>
+                    </td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <h4>Moderation</h4>
+                        <p>Easily review all questions before they go live</p>
+                    </td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <h4>Moderation</h4>
+                        <p>Easily review all questions before they go live</p>
+                    </td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Moderation</h4>
+                        <p>Easily review all questions before they go live</p>
+                    </td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Moderation</h4>
+                        <p>Easily review all questions before they go live</p>
+                    </td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Customization" class="tabs" style="display:none">
+            <table>
+                <tr>
+                    <th>
+                        <h3><i class="fa fa-comments"></i> Customization</h3>
+                    </th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="Integration" class="tabs" style="display:none">
+            <table>
+                <tr>
+                    <th>
+                        <h3><i class="fa fa-comments"></i> Integration</h3>
+                    </th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="Session" class="tabs" style="display:none">
+            <table>
+                <tr>
+                    <th>
+                        <h3><i class="fa fa-gear"></i> Session Settings</h3>
+                    </th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="Plans" class="tabs" style="display:none">
+            <table>
+                <tr>
+                    <th>
+                        <h3><i class="fa fa-comments"></i> My Plans</h3>
+                    </th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </section>
+</div>
+</main> 
+        
+        <script src="" async defer></script>
+    </body>
+</html>

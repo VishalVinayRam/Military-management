@@ -1,10 +1,8 @@
-
-
 from django import forms
-from .models import Family
+from .models import Ammo
 
 class RegimentForm(forms.ModelForm):
     
     class Meta:
-        model = Family
+        model = Ammo
         fields = '__all__'

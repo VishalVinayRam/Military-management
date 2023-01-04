@@ -8,6 +8,11 @@ class MyForm(forms.ModelForm):
     model = UserModel
     fields = ["name", "password","email",]
     labels = {'name': "Name", "mobile_number": "Mobile Number","email":"email"}
+    # widget ={
+    #   'name':  forms.TextField(attrs={'class':'form-control'}),
+    #   'password':forms.PasswordInput(attrs={'class':'form-control'}),
+
+    # }
 
 
 
@@ -18,4 +23,9 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'password']
-        labels = {'username': "Username", "password": "Password"}
+        labels = {'username': "Username", "password": "Password"},
+    #     widget ={
+    #   'name':  forms.TextField(attrs={'class':'form-control'}),
+    #   'password':forms.PasswordInput(attrs={'class':'form-control'}),
+
+    # }

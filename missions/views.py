@@ -1,12 +1,12 @@
 from django.shortcuts import render,redirect
-from models import Mission
-
+from .forms import RegimentForm
+from.models import Mission
 
 
 # Create your views here.
 def regiement_logins(request):
     if request.method == "POST":
-        form = Mission(request.POST)
+        form = RegimentForm(request.POST)
         datas = request.POST
         # username = datas.get('name')
         # print(words)
@@ -17,6 +17,13 @@ def regiement_logins(request):
             form.save()
             return redirect('/mains/')
     else:        
-        form = Mission()
+        form = RegimentForm()
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
+
+def dashboard(request):
+    user= Mission.objects.all()
+        # return render(request,'dashboard.html')     
+    print(user)
+        
+    return render(request,'dashboards/mission.html',{'user':user})

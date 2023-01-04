@@ -7,10 +7,11 @@ from django.contrib.auth.models import User
 # Create your views here.
 # Create your views here.
 def dashboard(request):
-    if request.method == "POST":
-        v=  User.objects.all()
-        return render(request,'dashboard.html',{'user':v})     
-    return render(request,'dashboard.html')
+    user=  User.objects.all()
+        # return render(request,'dashboard.html')     
+    print(user)
+        
+    return render(request,'dashboard.html',{'user':user})
 
 
 def register_usere(request):
@@ -27,7 +28,7 @@ def register_usere(request):
         if form.is_valid():
             form.save()
             
-            messages.sucess(request,'The user is logined successfully')
+            messages.add_message(request,messages.SUCCESS,'The user is logined successfully')
             return redirect('mains')
     else:
         form = UserCreationForm()
@@ -38,17 +39,34 @@ def login(request):
     form = UserForm(request.POST)
     if request.method == "POST":
         #username = request.POST.get('username')
+        print("POST")
         #data = form.objects.filter(username)
-        if form.is_valid():
-            # try:
-                messages.info(request,'The user is logined successfully')
-                form.save()
+        try:
+            print("trying valid")
+            if form.is_valid():
+                print("form is valid")
+                try:
+                    messages.info(request,'The user is logined successfully')
+                    form.save()
+                    print("form is saved")
+                    return redirect('/mains/')
+                except(TypeError):
+                    print("error occurred1")
+                    messages.add_message(request,messages.ERROR,'The user is not logined successfully')
                 return redirect('/mains/')
-            # except(TypeError):
-            #     messages.error(request,'The user is not logined successfully')
-            #     return redirect('/mains/')
+            else:
+                print("errors login")
+                messages.error(request,"Login failed")
+                return redirect('/mains/')
+
+
+        except(e):
+            messages.error(request,'Failed due to {{e}}')
+            
         form = UserForm()
-    return render(request,'forms/login.html',{'form':form,'messages':messages})
+        print("it is only get")
+        messages.add_message(request,messages.ERROR,"LOGIN FAILED")
+    return render(request,'forms/login.html',{'form':form,})
 
 def index(request):
     return render(request,"welcome.html")
