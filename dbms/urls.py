@@ -25,7 +25,6 @@ from regiment import urls as regimenturls
 from ammon import urls as ammourls
 from terror import urls as terrorurls
 from missions import urls  as missionurls
-from soliders.views import dashboard
 
 
 
@@ -37,13 +36,14 @@ urlpatterns = [
     path('ammo/',include(ammourls)),
         path('mission/',include(missionurls)),
     path('ter/',include(terrorurls)),
-    # path('login/',login,name="login"),
+    path('login/',login,name="login"),
     path('',index,name="main_screen"),
-    path('mains/',dashboard,name="dash_board"),
+    path('mains/',dashboards,name="dash_board"),
     path('register/',register_usere,name="register"),
+    path('hoilday/',leave-letter,)
     # patht
     # path('logout/',logouts,name="logout"),
-    path('login/',LoginView.as_view(template_name='forms/login.html'),name='login'),
+    # path('login/',LoginView.as_view(template_name='forms/login.html'),name='login'),
     path('logout/', LogoutView.as_view(template_name ="forms/logout.html"), name='logout'),
 
     
