@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from soliders.models import UserModel
+from soliders.models import *
 
 class MyForm(forms.ModelForm):
   class Meta:
@@ -35,3 +35,7 @@ class UserForm(forms.ModelForm):
     #   'password':forms.PasswordInput(attrs={'class':'form-control'}),
 
     # }
+class SoliderForm(forms.ModelForm):
+    class Meta:
+        model = Soliders
+        fields = ['name','post']

@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'family',
     'regiment',
     'soliders',
-    'widget_tweaks',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

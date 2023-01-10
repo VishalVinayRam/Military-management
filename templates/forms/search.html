@@ -1,0 +1,9 @@
+<div class="search-wrapper">
+    <div class="input-holder">
+        <form method='POST'action='{% url 'searching' %}'>
+            {% csrf_token %}
+        <input type="number" class="search-input" placeholder="Type to search" name="search">
+        <button class="search-icon"><span></span></button>
+        </form>
+    </div>
+    <button class="close"></button>

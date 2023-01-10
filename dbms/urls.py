@@ -40,7 +40,7 @@ urlpatterns = [
     path('',index,name="main_screen"),
     path('mains/',dashboards,name="dash_board"),
     path('register/',register_usere,name="register"),
-    path('hoilday/',leave-letter,)
+    path('hoilday/',leave_letter),
     # patht
     # path('logout/',logouts,name="logout"),
     # path('login/',LoginView.as_view(template_name='forms/login.html'),name='login'),

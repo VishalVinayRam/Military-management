@@ -165,6 +165,7 @@ fieldset {
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">  
+          {% include 'message.html' %}
         <form id="contact" action="" method="post">
             {% csrf_token %}
             <h3>Colorlib Contact Form</h3>
