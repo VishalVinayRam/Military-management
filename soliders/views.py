@@ -19,9 +19,11 @@ def searching(request):
 def sol_data(request):
     if not request.user.is_authenticated:
         return render(request,'/login')
-    user=  User.objects.all()
-        # return render(request,'dashboard.html')     
-    print(user)
+    user=  Soliders.objects.all()
+    for i in user:
+        print(i)
+    return render(request,'sol-data',{'user':user})     
+    # print(user)
         
     return render(request,'sol-data.html',{'user':user})
 
@@ -35,13 +37,15 @@ def dashboards(request):
         
     return render(request,'dashboard.html',{'user':user})
 
+def reset_password(request):
+    return render(request,'forms/login.html')
 
 
 
 def logouts(request):
     if request.method=="POST":
         logout(request)
-        return redirect('login')
+        return redirect('/login')
 
 
 @unautheticated_user

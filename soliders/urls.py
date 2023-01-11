@@ -6,6 +6,6 @@ urlpatterns = [
     path('login/',login ,name="login"),
     path('/', index, name='index'),
     path('register/', register_solider, name='sol-register'),
-    path('data/',sol_data),
+    path('datas/',sol_data),
     path('holiday/',leave_letter)
     ]
