@@ -4,7 +4,11 @@ from django.db import models
 class Soliders(models.Model):
     name = models.CharField(max_length=50)
     post =  models.CharField(max_length=100)
-    sol_id = models.AutoField(primary_key=True),
+    sol_id = models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return self.sol_id
 
 
 
