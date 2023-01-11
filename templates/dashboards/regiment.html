@@ -83,8 +83,8 @@
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             <button type="button" tabindex="0" >User Account</button>
-                                            <button type="button" tabindex="0" ><a href='/mains/'>Soiider</a></button>
-                                            <h6 tabindex="-1" >Header</h6>
+                                            <button type="button" tabindex="0" ><a href='forms/sol/data'>Soiider</a></button>
+                                            <h6 tabindex="-1" >Solider</h6>
                                             <button type="button" tabindex="0" ><a href='ammo/data'>Ammonition</a></button>
                                             <div tabindex="-1" ></div>
                                             <button type="button" tabindex="0" ><a href='mission/data'>Missions</a></button>
@@ -353,6 +353,14 @@
                                             <tbody>
                                             <tr>
                                                 {% comment %} <td class="text-center text-muted">{{i+1}}</td> {% endcomment %}
+                                                <tr>
+                                                    <th scope="col">Soliders id</th>
+<th scope="col">Regiment id</th>
+<th scope="col">Mission id</th>
+<th scope="col">Email</th>
+{% comment %} <th scope="col">Place</th> {% endcomment %}
+{% comment %} <th scope="col">Email</th> {% endcomment %}
+                                                    </tr>
                                                 <td>
                                                     {% for i in user%}
                                                     <div class="widget-content p-0">
@@ -365,16 +373,9 @@
                                                             <div class="widget-content-left flex2">
                                                                 {% comment %} {% endcomment %}
                                                             </div>
-                                                            <tr>
-                                                                <th scope="col">Soliders id</th>
-            <th scope="col">Regiment id</th>
-            <th scope="col">Mission id</th>
-            <th scope="col">Email</th>
-            {% comment %} <th scope="col">Place</th> {% endcomment %}
-            {% comment %} <th scope="col">Email</th> {% endcomment %}
-                                                                </tr>
+                                                     
                                                                 <tr>
-          <th scope="col">{{i.soliders}}</th>
+          <th scope="col">{{i.soliders.id}}</th>
           <th scope="col">{{i.regiment_id}}</th>
           <th scope="col">{{i.missions_id}}</th>
           <th scope="col">{{i.email}}</th>

@@ -19,9 +19,11 @@ def searching(request):
 def sol_data(request):
     if not request.user.is_authenticated:
         return render(request,'/login')
-    user=  User.objects.all()
-        # return render(request,'dashboard.html')     
-    print(user)
+    user=  Soliders.objects.all()
+    for i in user:
+        print(i)
+    return render(request,'sol-data',{'user':user})     
+    # print(user)
         
     return render(request,'sol-data.html',{'user':user})
 
@@ -31,17 +33,20 @@ def dashboards(request):
         return render(request,'/login')
     user=  Soliders.objects.all()
         # return render(request,'dashboard.html')     
-    print(user)
+    for i in user:
+        print(i.name)
         
-    return render(request,'dashboard.html',{'user':user})
+    return render(request,'dashboards/sol-data.html',{'user':user})
 
+def reset_password(request):
+    return render(request,'forms/login.html')
 
 
 
 def logouts(request):
     if request.method=="POST":
         logout(request)
-        return redirect('login')
+        return redirect('/login')
 
 
 @unautheticated_user
@@ -64,7 +69,7 @@ def register_usere(request):
             return redirect('/register/')
     form = UserRegisterForm()
     print("logins")
-    return render(request,'forms/login.html',{'form':form})
+    return render(request,'forms/new_register.html',{'form':form})
 
 def register_solider(request):
     if request.method == "POST":
@@ -83,7 +88,6 @@ def register_solider(request):
             messages.error(request,"The user registraion failed")
             # messages.add_message(request,messages.ERROR,'The user is not logined successfully')
             return redirect('/register/')
-    form = USol()
     print("logins")
     return render(request,'forms/login.html',{'form':form})
 
