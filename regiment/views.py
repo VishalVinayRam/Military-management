@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
 from regiment.forms import RegimentForm
-
+from django.contrib.auth.decorators import login_required
 from regiment.models import Regiment
 from soliders.decorators import allowed_users
 
 # Create your views here.
+@login_required
 def searching(request):
     if request.method=='GET':
       data =request.GET.get('search')
@@ -26,7 +27,6 @@ def searching(request):
 
 
 @allowed_users(allowed_roles=['Head-quarters'])
-
 def regiement_logins(request):
     if request.method == "POST":
         form =  RegimentForm(request.POST)
@@ -43,7 +43,8 @@ def regiement_logins(request):
         form =  RegimentForm()
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
-
+    
+@login_required
 def dashboard(request):
     user= Regiment.objects.all()
         # return render(request,'dashboard.html')     

@@ -1,9 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from soliders.decorators import allowed_users
-
 from terror.models import Terrorist 
 from .forms import TerrorstForm
+
 
 
 
@@ -26,7 +26,6 @@ def terror_login(request):
         form = TerrorstForm()
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
-
 
 def dashboard(request):
     user= Terrorist.objects.all()
