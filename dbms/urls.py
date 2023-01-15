@@ -26,6 +26,7 @@ from ammon import urls as ammourls
 from terror import urls as terrorurls
 from missions import urls  as missionurls
 from django.contrib.auth import views as auth_views
+from soliders import urls as solidersurls
 
 
 
@@ -33,12 +34,13 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('sol/',include(familyurls)),
+   path('family/',include(familyurls)),
     path('reg/',include(regimenturls)),
     path('ammo/',include(ammourls)),
+    path('sol/',include(solidersurls)),
         path('mission/',include(missionurls)),
     path('ter/',include(terrorurls)),
-    path('login/',login,name="login"),
+    path('login/',loginUser,name="login"),
     path('',index,name="main_screen"),
     path('mains/',dashboards,name="dash_board"),
     path('register/',register_usere,name="register"),

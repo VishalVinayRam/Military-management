@@ -3,10 +3,13 @@ from django.shortcuts import render,redirect
 from soliders.decorators import allowed_users
 from .forms import RegimentForm
 from.models import Mission
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
-@allowed_users(allowed_roles=['Head-quarters','Recuritment'])
+@allowed_users(allowed_roles=['Head-quarters','Recuritment','Soliders'])
+@login_required
 def regiement_logins(request):
     if request.method == "POST":
         form = RegimentForm(request.POST)
@@ -24,6 +27,7 @@ def regiement_logins(request):
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
 
+@login_required
 def dashboard(request):
     user= Mission.objects.all()
         # return render(request,'dashboard.html')     

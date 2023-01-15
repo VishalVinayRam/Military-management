@@ -7,6 +7,8 @@ from soliders.models import *
 from soliders.decorators import *
 # Create your views here.
 from .forms import RegimentForm
+from django.contrib.auth.decorators import login_required
+
 
 def Profile(request):
     if('sol_id' not in request.session):
@@ -16,6 +18,7 @@ def Profile(request):
     return render(request,'Manager_Profile.html',{'solider':solider,})
     
 @allowed_users(allowed_roles=['Head-quarters','Recuritment','Solider'])
+@login_required
 def regiement_logins(request):
     if request.method == "POST":
         form =  Family(request.POST)
@@ -32,7 +35,7 @@ def regiement_logins(request):
         form =  Family()
     # print(form)
     return render(request,'forms/terror-register.html',{'form':form})
-
+@login_required
 def dashboard(request):
     user= Family.objects.all()
         # return render(request,'dashboard.html')     
