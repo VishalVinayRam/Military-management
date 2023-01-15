@@ -16,8 +16,12 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        {% csrf_token %}
         <h1>This is admin panel </h1>
-        <a></a>
+        <a href="/mains/">Dashboard</a>
+        <a href="/sol/letter">Leave letters</a>
+        <a href ="/ammo/data">Ammo  data</a>
+        <a href ="/logout">Logout</a>
         <script src="" async defer></script>
     </body>
 </html>

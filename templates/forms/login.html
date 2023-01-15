@@ -84,9 +84,14 @@
 
 					<h3 id="form-title">LOGIN</h3>
 				</div>
+				{% if mess %}
+				{% for i in  mess%}
+				<h2>{{i}}</h2>
+				{% endfor %}
+				{% endif %}
 				<div class="d-flex justify-content-center form_container">
 					<form method="POST" action="">
-                     {%csrf_token%}
+                     {% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>

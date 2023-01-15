@@ -39,3 +39,21 @@ class SoliderForm(forms.ModelForm):
     class Meta:
         model = Soliders
         fields = ['name','post']
+
+
+
+class Letter_form(forms.ModelForm):
+    class Meta:
+        model = Leave_Letter_Form
+        fields = ['sol_id','leave_type','leave_from','leave_to','reason','address','contact','date']
+        labels = {"sol_id": "Soldier Id","leave_type":"Leave Type","leave_from":"Leave From","leave_to":"Leave To","reason":"Reason","address":"Address","contact":"Contact","date":"Date"}
+        # widget ={
+        #   'name':  forms.TextField(attrs={'class':'form-control'}),
+        #   'password':forms.PasswordInput(attrs={'class':'form-control'}),
+
+        # }
+class CreateUserForm(UserCreationForm):
+
+    class Meta:
+        model=User
+        fields=['username','first_name','last_name','email','password1','password2']

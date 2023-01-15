@@ -34,7 +34,7 @@ from soliders import urls as solidersurls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('famlily/',include(familyurls)),
+   path('family/',include(familyurls)),
     path('reg/',include(regimenturls)),
     path('ammo/',include(ammourls)),
     path('sol/',include(solidersurls)),
