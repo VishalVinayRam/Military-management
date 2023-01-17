@@ -1,12 +1,14 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import TemplateView
 from django.contrib import messages
 from soliders.decorators import *
-from soliders.forms import CreateUserForm, Letter_form, MyForm,UserForm, UserRegisterForm
+from soliders.forms import CreateUserForm, Letter_form, UserForm, UserRegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from django.contrib.auth import logout,authenticate,login
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from .models import *
 from soliders.models import Soliders
 from django.contrib.auth.models import Group
@@ -207,3 +209,24 @@ def mainscreen(request):
     if not request.user.is_authenticated:
         return redirect('/login')
     return render(request,'forms/leave_letetr.html')
+
+
+
+@allowed_users(allowed_roles=['Head-quarters','Recuritment'])
+@login_required
+def leave_accept(request,id):
+    print(id)
+    user = Leave_Letter_Form.objects.get(sol_id=id)
+    user.is_approved = True
+    user.save()
+    return render(request,'leave_letter.html')
+
+
+class IndexView(TemplateView):
+    template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['is_approved'] = Leave_Letter_Form.objects.order_by('?').all()
+
+        return context

@@ -10,4 +10,5 @@ urlpatterns = [
     path('mainscreen/',mainscreening),
     path('rec_mainscreen/',recuriment_mainscreen),
     path('sol_mainscreen/',soliders_mainscreening),
+
     ]
