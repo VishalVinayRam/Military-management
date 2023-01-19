@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from .models import *
 from soliders.models import Soliders
+import pdfkit 
 from django.contrib.auth.models import Group
 
 # Create your views here.
@@ -135,13 +136,17 @@ def loginUser(request):
             group=None
             if request.user.groups.exists():
                 group=request.user.groups.all()[0].name
-            if(group =='Solider'):
+                print(group)
+                if(group =='Solider'):
                  return redirect ('/sol/sol_mainscreen') 
-            elif(group=='admin') :
+                elif(group=='recuritment'):
+                    return redirect ('/sol/rec_mainscreen/')
+                elif(group=='Head-quarters') :
                  return redirect ('/sol/mainscreen/') 
+                else:
+                 return redirect ('/sol/rec_mainscreen/')
             else:
-               return redirect ('/sol/mainscreen/')
-            rs
+                return redirect ('/sol/sol_mainscreen/')
          else:
             messages.add_message(request,messages.WARNING,'The user is logined successfully')
             return render(request,'forms/login.html')
@@ -160,6 +165,15 @@ def index(request):
 def renders(request):
     user = Leave_Letter_Form.objects.all()
     return render(request,"dashboards/letter.html",{'user':user})
+
+@allowed_users(allowed_roles=['Head-quarters','Recuritment'])
+@login_required
+def letter_confirmation(request,id):
+    user = Leave_Letter_Form.objects.get(pk=id)
+    user.is_approved= True
+    user.save()
+    return render(request,'leave_letter.html',{'i':user})
+
 
 
 @allowed_users(allowed_roles=['Head-quarters','Admin'])
@@ -219,7 +233,8 @@ def leave_accept(request,id):
     user = Leave_Letter_Form.objects.get(sol_id=id)
     user.is_approved = True
     user.save()
-    return render(request,'leave_letter.html')
+    pdfkit.from_file('templates/leave_letter.html','leave.pdf') 
+    return render(request,'leave_letter.html',{'i':user})
 
 
 class IndexView(TemplateView):

@@ -353,6 +353,11 @@
                                             <tbody>
                                             <tr>
                                                 {% comment %} <td class="text-center text-muted">{{i+1}}</td> {% endcomment %}
+                                                    <th scope="col">Solider ID</th>
+<th scope="col">Name</th>
+<th scope="col">Post</th>
+{% comment %} <th scope="col">Email</th> {% endcomment %}
+                                                    </tr>
                                                 <td>
                                                     {% for i in user%}
                                                     <div class="widget-content p-0">
@@ -366,12 +371,7 @@
                                                                 {% comment %} {% endcomment %}
 
                                                             </div>
-                                                            <tr>
-                                                            <th scope="col">Solider ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Post</th>
-        {% comment %} <th scope="col">Email</th> {% endcomment %}
-                                                            </tr>
+                                                           
                                                             <tr>
       <th scope="col">{{i.sol_id}}</th>
       <th scope="col">{{i.name}}</th>

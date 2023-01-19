@@ -315,6 +315,7 @@
                                     action='leave_letter'
       id="bootstrapForm"
       method="POST">
+      {% csrf_token %}
     <fieldset>
         <h2>Vacation Request Form<br><small></small></h2>
     </fieldset>

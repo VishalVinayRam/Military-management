@@ -99,7 +99,7 @@
                                         
                                     </div>
                                     <div class="widget-subheading">
-                                        VP People Manager
+                                        <a href="/logout" >Logout</a>
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">
@@ -357,7 +357,6 @@
                                                     <th scope="col">Soliders id</th>
 <th scope="col">Regiment id</th>
 <th scope="col">Mission id</th>
-<th scope="col">Email</th>
 {% comment %} <th scope="col">Place</th> {% endcomment %}
 {% comment %} <th scope="col">Email</th> {% endcomment %}
                                                     </tr>
@@ -375,10 +374,9 @@
                                                             </div>
                                                      
                                                                 <tr>
-          <th scope="col">{{i.soliders.id}}</th>
+          <th scope="col">{{i.soliders}}</th>
           <th scope="col">{{i.regiment_id}}</th>
           <th scope="col">{{i.missions_id}}</th>
-          <th scope="col">{{i.email}}</th>
           {% comment %} <th scope="col">{{i.place}}</th> {% endcomment %}
                                                                 </tr>
                                                             {% comment %} <td>{{i.soliders}}</td>

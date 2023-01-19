@@ -73,6 +73,7 @@
     <section class="flex-content flex">
         <a href="#" class="res"><img src="https://i.postimg.cc/xjZf6n9Q/author.png" alt="" class="author"></a>
         <form>
+            {% csrf_token %}
             <label class="flex">
                 <input type="text" name="preview" placeholder="Preview on:">
                 <a href="#" class="flex"><i class="fa fa-mobile"></i></a>
