@@ -15,7 +15,7 @@ def Profile(request):
         return redirect('/signin/')
     solider_id = request.session.get('sol_id')
     solider = Soliders.objects.get(solider_id=solider_id)
-    return render(request,'Manager_Profile.html',{'solider':solider,})
+    return render(request,'_Profile.html',{'solider':solider,})
     
 @allowed_users(allowed_roles=['Head-quarters','Recuritment','Solider'])
 @login_required
