@@ -42,3 +42,11 @@ def dashboard(request):
     print(user)
         
     return render(request,'dashboards/family-data.html',{'user':user})
+
+@login_required
+def dashboards(request):
+    user= Family.objects.all()
+        # return render(request,'dashboard.html')     
+    print(user)
+        
+    return render(request,'dashboards/family_sol.html',{'user':user})
