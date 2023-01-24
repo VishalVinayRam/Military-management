@@ -73,6 +73,7 @@
     <section class="flex-content flex">
         <a href="#" class="res"><img src="https://i.postimg.cc/xjZf6n9Q/author.png" alt="" class="author"></a>
         <form>
+            {% csrf_token %}
             <label class="flex">
                 <input type="text" name="preview" placeholder="Preview on:">
                 <a href="#" class="flex"><i class="fa fa-mobile"></i></a>
@@ -106,7 +107,7 @@
             <button class="default">Event Settings</button>
             <button class="tab_button" onclick="openTab(event,'General')">General</button>
             <button class="tab_button" onclick="openTab(event,'Privacy')">Privacy</button>
-            <button class="tab_button primary" onclick="openTab(event,'Features')">Features</button>
+            <button class="tab_button primary" onclick="openTab(event,'s')">s</button>
             <button class="tab_button" onclick="openTab(event,'Customization')">Customization</button>
             <button class="tab_button" onclick="openTab(event,'Integration')">Integration</button>
             <button class="tab_button" onclick="openTab(event,'Session')">Session Settings</button>
@@ -144,7 +145,7 @@
                 </tr>
             </table>
         </div>
-        <div id="Features" class="tabs">
+        <div id="s" class="tabs">
             <table>
                 <tr>
                     <th>

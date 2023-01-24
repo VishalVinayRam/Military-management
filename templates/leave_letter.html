@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title><h1><b>Leave acception letter</b></h1></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            {
+                body {
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+                
+                .sender-column {
+                    text-align: right;
+                    margin-top: 1em;
+                }
+                
+                h1 {
+                    font-size: 1.5em;
+                }
+                
+                h2 {
+                    font-size: 1.3em;
+                }
+                
+                p,
+                ul,
+                ol,
+                dl,
+                address {
+                    font-size: 1.1em;
+                }
+                
+                p,
+                li,
+                dd,
+                dt,
+                address {
+                    line-height: 1.5;
+                }
+                
+            }
+        </style>
+    </head>
+    <body>
+          <p class="sender-column">
+            <time datetime="20-01-1016">{{i.date}}</time>
+          </p>
+          
+          <div>
+            <address>
+              {{i.address}}
+              <br />
+            </address>
+          </div>
+          
+          <h1>Subject : Leave acception letter due to {{i.reason}}</h1>
+          <p>
+            Solider {{i.sol_id}},Your recent leave application from  {{i.leave_from}} to {{i.leave_to}} is accepted successfully by the regiment
+            commander. You are requested to report to the regiment on {{i.leave_to}} and get this letter sealed from the office department.            
+            Your expected to report to the base on {{i.leave_to}} morning at sharp 6:00.
+          </p>
+          
+            <p>
+                <strong>Regards</strong>
+                <br />
+                <strong>Commander</strong>
+            </p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,22 +1,26 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import TemplateView
 from django.contrib import messages
 from soliders.decorators import *
-from soliders.forms import CreateUserForm, Letter_form, MyForm,UserForm, UserRegisterForm
+from soliders.forms import CreateUserForm, Letter_form, SoliderForm, UserForm, UserRegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from django.contrib.auth import logout,authenticate,login
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from .models import *
 from soliders.models import Soliders
+import pdfkit 
 from django.contrib.auth.models import Group
 
 # Create your views here.
 # Create your views here.
+@unautheticated_user
 @login_required
 def searching(request):
     return render(request,'forms/search.html')
 
+@unautheticated_user
 @login_required
 def sol_data(request):
     if not request.user.is_authenticated:
@@ -28,7 +32,7 @@ def sol_data(request):
     # print(user)
         
     return render(request,'sol-data.html',{'user':user})
-
+@unautheticated_user
 @login_required
 def dashboards(request):
     if not request.user.is_authenticated:
@@ -95,12 +99,13 @@ def register_usere(request):
     return render(request,'forms/new_register.html',context) 
 
 @allowed_users(allowed_roles=['Head-quarters','Recuritment'])
+@unautheticated_user
 @login_required
 def register_solider(request):
     if request.method == "POST":
         # username = form.cleaned_data.get('username')
         print("this is post")
-        form = UserRegisterForm(request.POST)
+        form = SoliderForm(request.POST)
         if form.is_valid():
             print("form is valid")
             user = form.save()
@@ -114,7 +119,8 @@ def register_solider(request):
             # messages.add_message(request,messages.ERROR,'The user is not logined successfully')
             return redirect('/register/')
     print("logins")
-    return render(request,'forms/login.html',{'form':form})
+    form = SoliderForm()
+    return render(request,'forms/terror-register.html',{'form':form})
 def loginUser(request):
     
     if request.method=='POST':
@@ -133,13 +139,17 @@ def loginUser(request):
             group=None
             if request.user.groups.exists():
                 group=request.user.groups.all()[0].name
-            if(group =='Solider'):
+                print(group)
+                if(group =='Solider'):
                  return redirect ('/sol/sol_mainscreen') 
-            elif(group=='admin') :
+                elif(group=='recuritment'):
+                    return redirect ('/sol/rec_mainscreen/')
+                elif(group=='Head-quarters') :
                  return redirect ('/sol/mainscreen/') 
+                else:
+                 return redirect ('/sol/rec_mainscreen/')
             else:
-               return redirect ('/sol/mainscreen/')
-            rs
+                return redirect ('/sol/sol_mainscreen/')
          else:
             messages.add_message(request,messages.WARNING,'The user is logined successfully')
             return render(request,'forms/login.html')
@@ -154,24 +164,38 @@ def index(request):
     return render(request,"welcome.html")
 
 @allowed_users(allowed_roles=['Head-quarters','Recuritment'])
+@unautheticated_user
 @login_required
 def renders(request):
     user = Leave_Letter_Form.objects.all()
     return render(request,"dashboards/letter.html",{'user':user})
 
+@allowed_users(allowed_roles=['Head-quarters','Recuritment'])
+@unautheticated_user
+@login_required
+def letter_confirmation(request,id):
+    user = Leave_Letter_Form.objects.get(pk=id)
+    user.is_approved= True
+    user.save()
+    return render(request,'leave_letter.html',{'i':user})
+
+
 
 @allowed_users(allowed_roles=['Head-quarters','Admin'])
+@unautheticated_user
 @login_required
 def mainscreening(request):
     return render(request,'enter/admins.html')
 
 @allowed_users(allowed_roles=['Recuritment','Admin'])
+@unautheticated_user
 @login_required
 def recuriment_mainscreen(request):
     return render(request,'enter/recuritment.html')
 
 
 @allowed_users(allowed_roles=['Soliders','Admin'])
+@unautheticated_user
 @login_required
 def soliders_mainscreening(request):
     return render(request,'enter/soliders.html')
@@ -182,7 +206,8 @@ def soliders_mainscreening(request):
 
 
 
-@allowed_users(allowed_roles=['Solider'])
+
+@unautheticated_user
 @login_required
 def leave_letter(request):
     if request.method == "POST":
@@ -199,7 +224,7 @@ def leave_letter(request):
     else:        
         form =  Letter_form()
     # print(form)
-    return render(request,'forms/terror-register.html',{'form':form})
+    return render(request,'forms/lettters.html',{'form':form})
 
 
 
@@ -207,3 +232,26 @@ def mainscreen(request):
     if not request.user.is_authenticated:
         return redirect('/login')
     return render(request,'forms/leave_letetr.html')
+
+
+
+@allowed_users(allowed_roles=['Head-quarters','Recuritment'])
+@unautheticated_user
+@login_required
+def leave_accept(request,id):
+    print(id)
+    user = Leave_Letter_Form.objects.get(sol_id=id)
+    user.is_approved = True
+    user.save()
+    pdfkit.from_file('templates/leave_letter.html','leave.pdf') 
+    return render(request,'leave_letter.html',{'i':user})
+
+
+class IndexView(TemplateView):
+    template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['is_approved'] = Leave_Letter_Form.objects.order_by('?').all()
+
+        return context

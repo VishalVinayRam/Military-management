@@ -99,7 +99,7 @@
                                         
                                     </div>
                                     <div class="widget-subheading">
-                                        VP People Manager
+                                        <a href="/logout" >Logout</a>
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">
@@ -272,10 +272,7 @@
                         <div class="app-page-title">
                             <div class="page-title-wrapper">
                                 <div class="page-title-heading">
-                                    <div class="page-title-icon">
-                                        <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                                        </i>
-                                    </div>
+                                    
                                     <div>
                                         <div class="page-title-subheading">This is an  dashboard for Regiments
                                         </div>
@@ -337,15 +334,7 @@
                         
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="main-card mb-3 card">
-
-                                        <div class="btn-actions-pane-right">
-                                            <div role="group" class="btn-group-sm btn-group">
-                                                {% comment %} <button class="active btn btn-focus">Last </button>
-                                                <button class="btn btn-focus">All Month</button> {% endcomment %}
-                                            </div>
-                                        </div>
-                                    </div>
+                                
                                     <div class="table-responsive">
                                         <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                                             <thead>
@@ -357,7 +346,6 @@
                                                     <th scope="col">Soliders id</th>
 <th scope="col">Regiment id</th>
 <th scope="col">Mission id</th>
-<th scope="col">Email</th>
 {% comment %} <th scope="col">Place</th> {% endcomment %}
 {% comment %} <th scope="col">Email</th> {% endcomment %}
                                                     </tr>
@@ -375,10 +363,9 @@
                                                             </div>
                                                      
                                                                 <tr>
-          <th scope="col">{{i.soliders.id}}</th>
+          <th scope="col">{{i.soliders}}</th>
           <th scope="col">{{i.regiment_id}}</th>
           <th scope="col">{{i.missions_id}}</th>
-          <th scope="col">{{i.email}}</th>
           {% comment %} <th scope="col">{{i.place}}</th> {% endcomment %}
                                                                 </tr>
                                                             {% comment %} <td>{{i.soliders}}</td>

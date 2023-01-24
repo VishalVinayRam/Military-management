@@ -25,6 +25,7 @@
         <![endif]-->
         {% if  user %}
         {% for i in user %}
+        {% if not i.is_approved %}
         <div class="container">
             <div class="row">
               <div class="col-sm">
@@ -40,16 +41,16 @@
                 <h4>{{i.reason}} </h4>
               </div>
               <div class="col-sm">
-                <button>
-                    {{i.is_approved}}
-                </button>
+                <button><a href="{% url 'letter_confirmation' i.sol_id %}" id="button_id">
+                    False
+                </a></button>
               </div>
             </div>
           </div>        
         
        
         
-       
+          {% endif %}
         {% endfor %}
         {% else %}
         <h4>lo leave letters presenet</h4>
@@ -57,6 +58,7 @@
     </div>
         
         <script src="" async defer></script>
+      
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
