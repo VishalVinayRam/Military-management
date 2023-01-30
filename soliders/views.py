@@ -158,7 +158,7 @@ def index(request):
     users_in_group = Group.objects.get(name="Soliders").user_set.all()
     for i in users_in_group:
         print(i)
-    return render(request,"welcome.html")
+    return render(request,"office.html")
 
 @allowed_users(allowed_roles=['Head-quarters','Recuritment'])
 @login_required

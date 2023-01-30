@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <style>
+              .navbar-brand {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 48px;
+              }
+              
+              .navbar-nav .nav-item:hover {
+                background-color: rgba(180, 190, 203, 0.4);
+              }
+              .carousel-item {
+                height: 80vh;
+                min-height: 350px;
+                background: no-repeat center center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+              }
+              .fade-carousel {
+                position: relative;
+                height: 80vh;
+            }
+            .fade-carousel .carousel-inner .item {
+                height: 100vh;
+            }
+            .fade-carousel .carousel-indicators > li {
+                margin: 0 2px;
+                background-color: #f39c12;
+                border-color: #f39c12;
+                opacity: .7;
+            }
+            .fade-carousel .carousel-indicators > li.active {
+              width: 10px;
+              height: 10px;
+              opacity: 1;
+            }
+            
+            /********************************/
+            /*          Hero Headers        */
+            /********************************/
+            .hero {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 3;
+                color: #fff;
+                text-align: center;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+                  -webkit-transform: translate3d(-50%,-50%,0);
+                     -moz-transform: translate3d(-50%,-50%,0);
+                      -ms-transform: translate3d(-50%,-50%,0);
+                       -o-transform: translate3d(-50%,-50%,0);
+                          transform: translate3d(-50%,-50%,0);
+            }
+            .hero h1 {
+                font-size: 6em;    
+                font-weight: bold;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .fade-carousel .carousel-inner .item .hero {
+                opacity: 0;
+                -webkit-transition: 2s all ease-in-out .1s;
+                   -moz-transition: 2s all ease-in-out .1s; 
+                    -ms-transition: 2s all ease-in-out .1s; 
+                     -o-transition: 2s all ease-in-out .1s; 
+                        transition: 2s all ease-in-out .1s; 
+            }
+            .fade-carousel .carousel-inner .item.active .hero {
+                opacity: 1;
+                -webkit-transition: 2s all ease-in-out .1s;
+                   -moz-transition: 2s all ease-in-out .1s; 
+                    -ms-transition: 2s all ease-in-out .1s; 
+                     -o-transition: 2s all ease-in-out .1s; 
+                        transition: 2s all ease-in-out .1s;    
+            }
+            
+            /********************************/
+            /*            Overlay           */
+            /********************************/
+            .overlay {
+                position: absolute;
+                width: 100%;
+                height: 80vh;
+                z-index: 2;
+                background-color: #080d15;
+                opacity: .7;
+            }
+            
+            /********************************/
+            /*          Custom Buttons      */
+            /********************************/
+            .btn.btn-hero,
+            .btn.btn-hero:hover,
+            .btn.btn-hero:focus {
+                color: #f5f5f5;
+                background-color: #1abc9c;
+                border-color: #1abc9c;
+                outline: none;
+            }
+            
+            /********************************/
+            /*       Slides backgrounds     */
+            /********************************/
+            .fade-carousel .slides .slide-1, 
+            .fade-carousel .slides .slide-2,
+            .fade-carousel .slides .slide-3 {
+              height: 80vh;
+              background-size: cover;
+              background-position: center center;
+              background-repeat: no-repeat;
+            }
+            .fade-carousel .slides .slide-1 {
+              background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818); 
+            }
+            .fade-carousel .slides .slide-2 {
+              background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
+            }
+            .fade-carousel .slides .slide-3 {
+              background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
+            }
+            
+            @media screen and (min-width: 980px){
+                .hero { width: 980px; }    
+            }
+            @media screen and (max-width: 640px){
+                .hero h1 { font-size: 4em; }    
+            }
+            .tabs-head{
+                color:#303030;
+                font-size:50px;
+            }
+            /* tabs display css  */
+            .tabs-section{
+                position:relative;
+                max-width:1200px;
+                width:100%;
+                margin:0 auto;
+                display:flex;
+                flex-wrap:wrap;
+                font-size:20px;
+                margin-top:30px;
+            }
+            .tabs-section ul {
+                display:none;
+            }
+            .each-tabflex.active ul {
+                display: block;
+                background-color:#fff;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            }
+            .each-tabflex {
+                width: 25%;
+                text-align: center;
+            }
+            .each-tabflex h4:hover{
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            }
+            /* tabs head  */
+            .tabs-section h4{
+                position: relative;
+                background: rgba(124,114,114,0.10);
+                cursor: pointer;
+                padding: 15px 20px;
+                margin: 0;
+                font-size: 1em;
+                border-right: 2px solid #94b0b7;
+            } 
+            .ul-box {
+                padding: 20px 35px;
+                color: #AFBFC0;
+                background-color: #303030;
+              margin-top:0px;
+            }
+            .tab-icon {
+                text-align:center
+                font-size: 1em;
+                padding: 30px;
+                box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
+                margin: 30px;
+            }
+              
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-md-auto gap-2">
+                  <li class="nav-item rounded">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill me-2"></i>Home</a>
+                  </li>
+                  <li class="nav-item rounded">
+                    <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>About</a>
+                  </li>
+                  <li class="nav-item rounded">
+                    <a class="nav-link" href="#"><i class="bi bi-telephone-fill me-2"></i>Contact</a>
+                  </li>
+                  <li class="nav-item dropdown rounded">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i>Profile</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+            <!-- Overlay -->
+            <div class="overlay"></div>
+          
+            <!-- Indicators -->
+            
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item slides active">
+                <div class="slide-1"></div>
+                <div class="hero">
+                  <hgroup>
+                      <h1>We are creative</h1>        
+                      <h3>Get start your next awesome project</h3>
+                  </hgroup>
+                  <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                </div>
+              </div>
+              <div class="item slides">
+                <div class="slide-2"></div>
+                <div class="hero">        
+                  <hgroup>
+                      <h1>We are smart</h1>        
+                      <h3>Get start your next awesome project</h3>
+                  </hgroup>       
+                  <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                </div>
+              </div>
+              <div class="item slides">
+                <div class="slide-3"></div>
+                <div class="hero">        
+                  <hgroup>
+                      <h1>We are amazing</h1>        
+                      <h3>Get start your next awesome project</h3>
+                  </hgroup>
+                  <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="tabs-container">
+            <section class="tabs-section">
+           <!-- list item 1  -->
+              <div class="each-tabflex">
+           <div class="tab-head active tab-icon"><i class="fa-solid fa-cubes"></i></div>
+           <ul class="ul-box">
+           
+           </ul>
+           </div>
+           <!--    list item # 2 -->
+              <div class="each-tabflex">
+           <div class="tab-head tab-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+           <ul class="ul-box">
+           </ul>
+           </div>
+           <!-- // list item 3  -->
+           <div class="each-tabflex">
+           <div class=" tab-head tab-icon"><i class="fa-solid fa-hippo"></i></div>
+           <ul class="ul-box">
+           </ul>
+           </div>
+           <!-- // list item 4  -->
+           <div class="each-tabflex">
+           <div class=" tab-head tab-icon"><i class="fa-brands fa-docker"></i></div>
+           <ul class="ul-box">
+           </ul>
+           </div>
+           </section>
+           </div>
+          <!-- font-awesome link  -->
+<script src="https://kit.fontawesome.com/439932ce9d.js" crossorigin="anonymous"></script>
+<!-- tabs start  -->
+
+          
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="" async defer></script>
+    </body>
+</html>
