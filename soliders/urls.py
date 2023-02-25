@@ -11,5 +11,6 @@ urlpatterns = [
     path('rec_mainscreen/',recuriment_mainscreen),
     path('sol_mainscreen/',soliders_mainscreening),
     path('letter_confirmation/<int:id>/',letter_confirmation ,name="letter_confirmation"),
+    path('join',join_army,name="join_army")
 
     ]

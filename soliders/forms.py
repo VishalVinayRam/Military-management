@@ -10,6 +10,12 @@ from soliders.models import *
 
     # }
 
+class Join_Amry_Form(forms.ModelForm):
+    class  Meta:
+        model = Join_Army
+        fields = '__all__'
+
+
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 

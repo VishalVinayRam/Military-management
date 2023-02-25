@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import TemplateView
 from django.contrib import messages
 from soliders.decorators import *
-from soliders.forms import CreateUserForm, Letter_form, UserForm, UserRegisterForm
+from soliders.forms import CreateUserForm, Join_Amry_Form, Letter_form, UserForm, UserRegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from django.contrib.auth import logout,authenticate,login
@@ -158,7 +158,7 @@ def index(request):
     users_in_group = Group.objects.get(name="Soliders").user_set.all()
     for i in users_in_group:
         print(i)
-    return render(request,"welcome.html")
+    return render(request,"index.html")
 
 @allowed_users(allowed_roles=['Head-quarters','Recuritment'])
 @login_required
@@ -214,7 +214,7 @@ def leave_letter(request):
             return redirect('/sol/sol_mainscreen')
     else:        
         form =  Letter_form()
-    # print(form)
+    # print(form) 
     return render(request,'forms/terror-register.html',{'form':form})
 
 
@@ -236,12 +236,19 @@ def leave_accept(request,id):
     pdfkit.from_file('templates/leave_letter.html','leave.pdf') 
     return render(request,'leave_letter.html',{'i':user})
 
-
-class IndexView(TemplateView):
-    template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        context['is_approved'] = Leave_Letter_Form.objects.order_by('?').all()
-
-        return context
+def join_army(request):
+    if request.method == "POST":
+        form =  Join_Amry_Form(request.POST)
+        datas = request.POST
+        # username = datas.get('name')
+        # print(words)
+        if form.is_valid():
+            print("HELLO")
+            # messages.success(request,'The user is logined successfully')
+            # print(form.cleaned_data['name'])
+            form.save()
+            return redirect('/sol/sol_mainscreen')
+    else:        
+        form =  Join_Amry_Form()
+    # print(form)
+    return render(request,'forms/terror-register.html',{'form':form})

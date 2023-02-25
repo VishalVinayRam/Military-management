@@ -10,6 +10,20 @@ class Soliders(models.Model):
     def __str__(self):
         return self.sol_id
 
+class Join_Army(models.Model):
+    name = models.CharField(max_length=50)
+    father_name = models.CharField(max_length=50)
+    mother_name = models.CharField(max_length=50)
+    dob = models.DateField()
+    address = models.CharField(max_length=50)
+    contact = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    date = models.DateField()
+    healthy =models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.sol_id)
+
 
 
 class UserModel(models.Model):
