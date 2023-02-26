@@ -1,6 +1,19 @@
 from django.db import models
 
 # Create your models here.
+class Soliders_register(models.Model):
+    name = models.CharField(max_length=50)
+    father_name = models.CharField(max_length=50)
+    mother_name = models.CharField(max_length=50)
+    dob = models.DateField()
+    address = models.CharField(max_length=50)
+    contact = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    date = models.DateField()
+    healthy =models.BooleanField(default=False)
+
+
+
 class Soliders(models.Model):
     name = models.CharField(max_length=50)
     post =  models.CharField(max_length=100)
@@ -11,6 +24,7 @@ class Soliders(models.Model):
         return self.sol_id
 
 class Join_Army(models.Model):
+    # id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     father_name = models.CharField(max_length=50)
     mother_name = models.CharField(max_length=50)

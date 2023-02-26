@@ -25,7 +25,7 @@ def terror_login(request):
     else:        
         form = TerrorstForm()
     # print(form)
-    return render(request,'forms/terror-register.html',{'form':form})
+    return render(request,'forms/terror-register.html',{'form':form,'name':'Add terrorist details'})
 
 def dashboard(request):
     user= Terrorist.objects.all()

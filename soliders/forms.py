@@ -13,7 +13,7 @@ from soliders.models import *
 class Join_Amry_Form(forms.ModelForm):
     class  Meta:
         model = Join_Army
-        fields = '__all__'
+        fields = ['name','father_name','mother_name','dob','address','contact','email','date']
 
 
 class UserRegisterForm(UserCreationForm):
@@ -38,8 +38,8 @@ class UserForm(forms.ModelForm):
     # }
 class SoliderForm(forms.ModelForm):
     class Meta:
-        model = Soliders
-        fields = ['name','post']
+        model = Soliders_register
+        fields = ['name','father_name','address','dob','contact','email','date']
 
 
 

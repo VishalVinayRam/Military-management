@@ -34,7 +34,7 @@ def regiement_logins(request):
     else:        
         form =  Family()
     # print(form)
-    return render(request,'forms/terror-register.html',{'form':form})
+    return render(request,'forms/terror-register.html',{'form':form,'name':'Add or edit family details'})
 @login_required
 def dashboard(request):
     user= Family.objects.all()

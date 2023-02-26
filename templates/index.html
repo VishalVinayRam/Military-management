@@ -1,633 +1,96 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Royal</title>
-
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{% static '../static/css/bootstrap.css' %}" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:400,500&display=swap"
-    rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-
-  <link href="{% static '../static/css/style.css' %}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{% static '../static/css/responsive.css' %}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'static/css/welcomes2.css' %}">
+    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> {% endcomment %}
+    <title>Document</title>
 </head>
-
 <body>
-  <!-- header section strats -->
-  <header class="header_section">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="#">
-          <div class="logo_box">
-            <img src= "{% static '../static/img/logo.png' %}" alt="" />
-          </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mr-2">
-            <li class="nav-item active">
-              <a class="nav-link" >Home <span class="sr-only">(current)</span></a>
+    <!-- navbar  -->
+    <div class="wrapper">
+        <nav>
+          <a href="#" class="logo">AAA</a>
+          <ul>
+            <li>
+              <a href="#">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">About us </a>
+            <li>
+              <a href="#">Features</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">Our activity</a>
+            <li>
+              <a href="#">Pricing</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">Awards section</a>
+            <li>
+              <a href="#">FAQ</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">Contact us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Login </a>
+            <li>
+              <a href="#">Contacts</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control nav_search-input mr-sm-2 d-none" type="search" placeholder="Search"
-              aria-label="Search" value="" />
-            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-          </form>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <!-- end header section -->
-  <div
-  id="carouselBasicExample"
-  class="carousel slide carousel-fade"
-  data-mdb-ride="carousel"
->
-  <!-- Indicators -->
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div>
-
-  <!-- Inner -->
-  <div class="carousel-inner">
-    <!-- Single item -->
-    <div class="carousel-item active">
-      <img
-        src="https://www.mapsofindia.com/ci-moi-images/my-india/2016/07/indian-army-ranks-and-recruitment-process.jpg"
-        class="d-block w-100"
-        alt="Sunset Over the City"
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>
-          Nulla vitae elit libero, a pharetra augue mollis interdum.
-        </p>
+        </nav>
       </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item">
-      <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
-        class="d-block w-100"
-        alt="Canyon at Nigh"
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item">
-      <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
-        class="d-block w-100"
-        alt="Cliff Above a Stormy Sea"
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Inner -->
-
-  <!-- Controls -->
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-mdb-target="#carouselBasicExample"
-    data-mdb-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-mdb-target="#carouselBasicExample"
-    data-mdb-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-  <!-- <div class="hero-section">
-    <img class="hero-section" src= {% static '../static/img/guards.jpg' %} alt="" />
-  </div> -->
-  <!-- <section class=" slider_section">
-    <div id="carouselExampleIndicators" class="carousel slide vert" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="slider_box">
-            <div class="fixed_company-detail">
-              <p>
-                Security Guard Company
-              </p>
-            </div>
-            <div class="slider-detail">
-              <div class="slider_detail-heading">
-                <h2>
-                  We Are
-                </h2>
-                <h1>
-                  Provided security services
-                </h1>
-              </div>
-              <div class="slider_detail-text">
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </div>
-              <div class="slider_detail-btn">
-                <a href="">
-                  <span>
-                    Read More
-                  </span>
-                  <!-- <img src="images/arrow.png" alt="" class="ml-2" /> -->
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="slider_box">
-            <div class="fixed_company-detail">
-              <p>
-                Security Guard Company
-              </p>
-            </div>
-            <div class="slider-detail">
-              <div class="slider_detail-heading">
-                <h2>
-                  We Are
-                </h2>
-                <h1>
-                  Provided security services
-                </h1>
-              </div>
-              <div class="slider_detail-text">
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </div>
-              <div class="slider_detail-btn">
-                <a href="">
-                  <span>
-                    Read More
-                  </span>
-                  <!-- <img src="images/arrow.png" alt="" class="ml-2" /> -->
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="slider_box">
-            <div class="fixed_company-detail">
-              <p>
-                Security Guard Company
-              </p>
-            </div>
-            <div class="slider-detail">
-              <div class="slider_detail-heading">
-                <h2>
-                  We Are
-                </h2>
-                <h1>
-                  Provided security services
-                </h1>
-              </div>
-              <div class="slider_detail-text">
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </div>
-              <div class="slider_detail-btn">
-                <a href="">
-                  <span>
-                    Read More
-                  </span>
-                  <!-- <img src="images/arrow.png" alt="" class="ml-2" /> -->
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </section> -->
-
-  <!-- welcome section -->
-  <section class="welcome_section layout_padding">
-    <div class="container-fluid">
-      <div class="row">
-        <div class=" col-md-6">
-          <div>
-            <img class="img-fluid" src= {% static '../static/img/welcome.jpg' %} alt="" />
-          </div>
-        </div>
-        <div class=" col-md-6">
-          <div class="welcome_detail">
-            <h3>
-              Welcome
-            </h3>
-            <h2>
-              Welcome Indian nation army
-            </h2>
-            <p>
-              The Indian Army is the land-based branch of the Indian Armed Forces. It is the world's second-largest standing army and the largest army. The President of India is the Supreme Commander of the Indian Army, and it is commanded by the Chief of Army Staff (COAS), who is a four-star general. Two battalions of the Indian Army have been awarded the "Nations in conflict" peacekeeping medal. The Indian Army has a regimental system but is operationally and geographically split into seven commands, with the basic field formation being a division. It is an all-volunteer force and comprises more than 81,000 active troops and a support element of close to 1,160,000 troops.
-            </p>
-            <div class="welcome_detail-btn">
-              <a href="">
-                <span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end welcome section -->
-
-  <!-- service section -->
-  <section class="service_section ">
-    <div class="container">
-      <div class="service_detail">
-        <h3>
-          We
-        </h3>
-        <h2>
-          we provide service
-        </h2>
-      </div>
-      <div class="row photos">
-        <div class="col-sm-6 col-md-4 col-lg-3 item"><a  data-lightbox="photos"><img class="img-fluid" src=""></a></div>
-        <div class="col-sm-6 col-md-4 col-lg-3 item"><a  data-lightbox="photos"><img class="img-fluid" src=""></a></div>
-        <div class="col-sm-6 col-md-4 col-lg-3 item"><a  data-lightbox="photos"><img class="img-fluid" src="https://i.imgur.com/06Ajq7f.jpg"></a></div>
-        <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos"><img class="img-fluid" src="https://i.imgur.com/zmzERpe.jpg"></a></div>
-        <div class="col-sm-6 col-md-4 col-lg-3 item"><a  data-lightbox="photos"><img class="img-fluid" src="https://i.imgur.com/gX11Vt5.jpg"></a></div>
       
-      <div class="service_btn">
-        <a href="">
-          <span>
-          </span>
-          <!-- <img src={% static '../static/img/arrow-black.png' %} alt="" class="ml-2" /> -->
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- end service section -->
-
-  <!-- security section -->
-
-  <section class="security_section layout_padding">
-    <h3>
-      Security
-
-
-    </h3>
-    <h2>
-      Our Guard
-    </h2>
-    <div class="security_container">
-      <div class="carousel-wrap">
-        <div class="owl-carousel">
-          <div class="item">
-            <div class="security_img-box i-box-1">
-              <a href=""> View More</a>
-            </div>
+    <!-- end of navbar -->
+    <!-- hero-section -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 h-80" src="https://rb.gy/gz1vnd" alt="First slide">
           </div>
-          <div class="item">
-            <div class="security_img-box i-box-2">
-              <a href=""> View More</a>
-            </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 h-80" src="https://rb.gy/4kgp8p" alt="Second slide">
           </div>
-          <div class="item">
-            <div class="security_img-box i-box-3">
-              <a href=""> View More</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div class="security_btn">
-      <a href="">
-        <span>
-          Read More
-        </span>
-        <!-- <img src={% static '../static/img/arrow-black.png' %} alt="" class="ml-2" /> -->
-      </a>
-    </div>
-  </section>
-  <!-- end security section -->
-
-
-  <!-- story section -->
-
-  <section class="layout_padding story_section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class=" col-md-6">
-          <div>
-            <img class="img-fluid" src={% static '../static/img/security.jpg' %} alt="" />
-          </div>
-        </div>
-        <div class=" col-md-6">
-          <div class="story_detail">
-            <h3>
-              Our
-            </h3>
-            <h2>
-              Success Stories
-            </h2>
-            <p>
-              Success in life lies in determination and hard work" when Sudha Chandran said these words, I felt that they are true in her case. But going forward, when I got to see too many living examples adding spine to this statement, it gave me an affirmation that it's a universal truth. Recently, while I was flipping the pages of the newspaper, I came across a piece of news about the IMA passing out parade. Something interesting caught my eye and that's what has become the story of this page today. We bring before you the story of sheer grit and determination, the successful journey of an IMA pass out of 2020, Lieutenant Balbanka Tiwari.
-
-On December 12th, 2020, the Indian Military Academy organised a passing out parade for its fresh graduates. In the parade, there was a 28-year-old epitome of confidence marching ahead with infinite dreams of serving the nation. While his mother, wife and his four-month-old daughter watched him, he waved smiles. However, behind the royal smile, there was seamless sweat that flowed from the vicissitudes of his teenage years. 
-
-
-            </p>
-            <div class="story_detail-btn">
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <!-- <img src= {% static '/img/arrow-black.png' %} alt="" class="ml-2" /> -->
-              </a>
-            </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 h-80" src="https://rb.gy/p3op5l" alt="Third slide">
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- end story section -->
-
-  <!-- contact section -->
-  <section class="contact_section layout_padding-top">
-    <div class="container-fluid">
-      <div class="row">
-        <div class=" col-md-6">
-          <div id="map" class="h-100 w-100 ">
-          </div>
-        </div>
-        <div class=" col-md-6 contact_form-container">
-          <div class="contact_box">
-            <form action="">
-              <input type="text" placeholder="Your Name">
-              <input type="email" placeholder="Email">
-              <input type="text" placeholder="Phone Number">
-              <input type="text" placeholder="Message">
-              <div>
-                <button type="submit">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    </div>
-  </section>
-
-  <!-- end contact section -->
-
-  <!-- info section -->
-  <section class="info_section layout_padding">
+    <!-- end of hero section -->
+    <!-- gallery section -->
+    
+    
+    <!-- end od gallery section -->
+    {% comment %} contact section {% endcomment %}
     <div class="container">
-      <div class="row">
-        <div class=" col-md-4 info_detail">
-          <div>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable.
-            </p>
-          </div>
-        </div>
-        <div class=" col-md-4 address_container">
-          <div>
-            <h3>
-              Address:
-            </h3>
-            <div class="address_link-container">
-              <a href="">
-                <span> Address: 73 Canal Street, New York, NY
-                </span>
-              </a>
-              <a href="">
-                <span> Tel: +1 123 456 789
-                </span>
-              </a>
-              <a href="">
-                <span>
-                  Email: demo@gmail.com
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class=" col-md-4 news_container">
-          <div>
-            <div>
-              <h3>
-                newsletter
-
-              </h3>
-              <form action="">
-                <input type="email" placeholder="ENTER YOUR EMAIL">
-                <div>
-                  <button type="submit">
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="social_container">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info section -->
-
-
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-   
-  </section>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="{% static '../static/js/jquery-3.4.1.min.js' %}"></script>
-  <script type="text/javascript" src="{% static '../static/js/bootstrap.js' %}"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js">
-  </script>
-  <script type="text/javascript">
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 20,
-      nav: true,
-      navText: [],
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1000: {
-          items: 3
-        }
-      }
-    });
-  </script>
-
-  <script>
-    $(".nav_search-btn").click(function () {
-      if ($(".nav_search-input").hasClass("d-none")) {
-        event.preventDefault();
-        $(".nav_search-input")
-          .animate({
-              left: "-1000px"
-            },
-            "1000000"
-          )
-          .removeClass("d-none");
-      } else {
-        $(".nav_search-input")
-          .animate({
-              left: "0px"
-            },
-            "1000000"
-          )
-          .addClass("d-none");
-      }
-    });
-  </script>
-
-  <script>
-    // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-    // Australia.
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
-        center: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-      });
-
-      var beachMarker = new google.maps.Marker({
-        position: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-        map: map,
-        icon: image
-      });
-    }
-  </script>
-  <!-- google map js -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
-  </script>
-  <!-- end google map js -->
-
+		<section class="section1">
+			<div class="sec1title">
+				<h1>Get in touch</h1>
+			</div>	
+		</section>
+		<section class="section2"> 
+			<div class="contactform">
+			<h5>Drop us a line...</h5>
+				<form action="#">
+					<label for="firstname">
+						<i class="cntfrmicn fa fa-user"></i>
+						<input name="firstname" class="form-fields" type="text">
+					</label>
+					<label for="email">
+						<i class="cntfrmicn fa fa-envelope"></i>
+						<input name="email" class="form-fields" type="text">
+					</label>
+					<label for="contact">
+						<i class="cntfrmicn fa fa-phone"></i>
+						<input name="contact" class="form-fields" type="text">
+					</label>
+					<label for="textarea">
+						<i class="cntfrmicn fa fa-comment"></i>
+						<textarea class="form-fields" name="textarea" id="" cols="30" rows="10"></textarea>
+					</label>
+					<button class="form-fields button" value="Send" type="submit">Send <i class="fa fa-paper-plane"></i></button>
+				</form>
+			</div>
+			<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div class="contmap" style='overflow:hidden;height:550px;width:100%;'><div id='gmap_canvas' style='height:100%;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small><a href="http://freedirectorysubmissionsites.com/">free web directories</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(19.075314480255834,72.88153973865361),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(19.075314480255834,72.88153973865361)});infowindow = new google.maps.InfoWindow({content:'<strong>My Location</strong><br>mumbai<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+		</section>
+	</div>
+    {% comment %} contact section end {% endcomment %}
+    {% comment %} <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> {% endcomment %}
 </body>
-
 </html>

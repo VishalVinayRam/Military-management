@@ -5,7 +5,7 @@ def unautheticated_user(view_func):
     def wrapper_func(request, *args, **kwargs):
         if request.user.is_authenticated:
             print(request.user)
-            return redirect('/mains/')
+            return redirect('')
         else:
             return view_func(request, *args, **kwargs)
 

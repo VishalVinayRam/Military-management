@@ -42,7 +42,7 @@ def regiement_logins(request):
     else:        
         form =  RegimentForm()
     # print(form)
-    return render(request,'forms/terror-register.html',{'form':form})
+    return render(request,'forms/terror-register.html',{'form':form,'name':'Add regiment-details'})
     
 @login_required
 def dashboard(request):
